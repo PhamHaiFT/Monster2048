@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="backgroundItem">#FFFFFF</color>
+    <color name="textScoreColor">#FFFFFF</color>
+    <color name="strokeItem">#9A717171</color>
+    <color name="backgroundGrid">#B4D5D5D5</color>
+    <array name="listColor">
+        <item>#A6FFF176</item>
+        <item>#A6FFB74D</item>
+        <item>#A6FF8A65</item>
+        <item>#A664B5F6</item>
+        <item>#A67986CB</item>
+        <item>#A69575CD</item>
+        <item>#A6AB47BC</item>
+        <item>#A64FC3F7</item>
+        <item>#A60288D1</item>
+        <item>#A6582AB3</item>
+        <item>#A67B1FA2</item>
+        <item>#A600796B</item>
+    </array>
+</resources>

@@ -3,22 +3,122 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:elevation="@dimen/_10sdp"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
-    <Button
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+    tools:context="com.slowcaculator.slow2048.HomeActivity">
+
+    <ImageView
+        android:id="@+id/imgIcon"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_250sdp"
+        android:src="@drawable/ic_app"
+        app:layout_constraintBottom_toTopOf="@id/btnStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/btnStart"
-        android:background="@color/backgroundGrid"
         android:layout_width="@dimen/_150sdp"
         android:layout_height="@dimen/_50sdp"
-        android:text="Play"
+        android:background="@drawable/ripple_play"
+        android:elevation="@dimen/_15sdp"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintBottom_toTopOf="@id/btnResume"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgIcon">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:gravity="center"
+            android:text="Play"
+            android:fontFamily="@font/kanit_medium"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/_17sdp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btnResume"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/ripple_resume"
+        android:elevation="@dimen/_15sdp"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintBottom_toTopOf="@id/btnCafe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnStart">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:gravity="center"
+            android:text="Resume"
+            android:fontFamily="@font/kanit_medium"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/_17sdp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btnCafe"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/ripple_donate"
+        android:padding="@dimen/_10sdp"
+        android:elevation="@dimen/_15sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></Button>
+        app:layout_constraintTop_toBottomOf="@id/btnResume">
+
+        <TextView
+            android:id="@+id/tvDonate"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_50sdp"
+            android:gravity="center"
+            android:textSize="@dimen/_15sdp"
+            android:fontFamily="@font/kanit_medium"
+            android:text="Buy me cafe"
+            android:textColor="#FFF"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/imgCoffeeCup"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgCoffeeCup"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:src="@drawable/coffee_cup"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvDonate"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></FrameLayout>
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"></FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

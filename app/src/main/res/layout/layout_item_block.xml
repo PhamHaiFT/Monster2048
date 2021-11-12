@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.example.monster2048.Block
+    <com.slowcaculator.slow2048.Block
         android:background="@drawable/bg_grid"
         android:layout_margin="@dimen/_3sdp"
         android:id="@+id/item"
@@ -11,6 +11,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:text="2"
+        android:fontFamily="@font/kanit_medium"
         android:textSize="@dimen/_40sdp"
-        android:textStyle="normal"></com.example.monster2048.Block>
+        android:textStyle="normal"/>
 </LinearLayout>

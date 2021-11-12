@@ -41,6 +41,7 @@
             app:layout_constraintGuide_percent="0.5" />
         <!--        h-->
         <RelativeLayout
+            android:id="@+id/rlTopBar"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="@dimen/_3sdp"
@@ -66,7 +67,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Điểm số"
+                        android:text="Score"
                         android:textColor="@color/textScoreColor"
                         android:textSize="@dimen/_15sdp"></TextView>
 
@@ -97,7 +98,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Điểm cao"
+                        android:text="Best score"
                         android:textColor="@color/textScoreColor"
                         android:textSize="@dimen/_15sdp"></TextView>
 
@@ -134,13 +135,13 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/v3">
+            app:layout_constraintTop_toBottomOf="@id/rlTopBar">
 
             <GridView
                 android:id="@+id/gvGame"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_grid"
+                android:background="@drawable/bg_playground"
                 android:numColumns="4"
                 android:padding="@dimen/_3sdp"></GridView>
         </LinearLayout>

@@ -36,11 +36,13 @@ public class HomeActivity extends AppCompatActivity implements PlayViewListener,
     ConstraintLayout btnResume;
     @BindView(R.id.btnCafe)
     ConstraintLayout btnCafe;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setTheme(R.style.AppTheme);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
         ActionBar actionBar = getSupportActionBar();
@@ -53,6 +55,9 @@ public class HomeActivity extends AppCompatActivity implements PlayViewListener,
         btnStart.setOnClickListener(this);
         btnResume.setOnClickListener(this);
         btnCafe.setOnClickListener(this);
+
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.anim_slide_in_up);
+        imgIcon.startAnimation(animation);
     }
 
     private void gotoPlayFragment(boolean isResume) {
@@ -120,6 +125,9 @@ public class HomeActivity extends AppCompatActivity implements PlayViewListener,
 
     @Override
     public void stopGame() {
+        Global.saveResumeState(getApplicationContext(),false);
+        Global.saveCurrentScore(getApplicationContext(),0);
+        Global.saveCurrentData(getApplicationContext(),"");
         getSupportFragmentManager().popBackStack();
     }
 

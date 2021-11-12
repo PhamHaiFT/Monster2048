@@ -17,6 +17,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.monster2048.R;
 
@@ -100,7 +101,7 @@ public class Slow2048Fragment extends Fragment implements View.OnClickListener {
     @SuppressLint("ClickableViewAccessibility")
     public void initData() {
         if (isResume()) {
-            updateTextView(tvScore,Global.getCurrentScore(getContext()));
+            updateTextView(tvScore, Global.getCurrentScore(getContext()));
             DoNotRemove.getInstance().initSaved(getContext(), getSavedData());
         } else {
             updateTextView(tvScore, 0);
@@ -167,7 +168,7 @@ public class Slow2048Fragment extends Fragment implements View.OnClickListener {
     private ArrayList<Integer> getSavedData() {
         String[] str = Global.getCurrentData(getContext()).split(",");
         ArrayList<Integer> res = new ArrayList<>();
-        for (String s: str){
+        for (String s : str) {
             res.add(Integer.valueOf(s));
         }
         return res;
@@ -176,7 +177,6 @@ public class Slow2048Fragment extends Fragment implements View.OnClickListener {
     private void endGame() {
         isEndGame = true;
         Log.d(TAG, "endGame: ");
-        Toasty.error(getContext(), "GAME OVER", 1000).show();
         showEndgameDialog();
     }
 
@@ -215,6 +215,8 @@ public class Slow2048Fragment extends Fragment implements View.OnClickListener {
         View view = LayoutInflater.from(getContext()).inflate(R.layout.dialog_end_game, null);
         final Button btnHome = view.findViewById(R.id.btnHome);
         final Button btnReplay = view.findViewById(R.id.btnReplay);
+        final TextView tvScoreEndGame = view.findViewById(R.id.tvScore);
+        tvScoreEndGame.setText("Score : "+tvScore.getText().toString());
 
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override

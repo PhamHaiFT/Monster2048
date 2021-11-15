@@ -1,4 +1,4 @@
-package com.slowcaculator.slow2048;
+package com.supermonster.hardest2048;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -48,6 +48,7 @@ public class Global {
 
     public static int getCurrentScore(Context context) {
         scorePref = context.getSharedPreferences(SLOW_PREF, Context.MODE_PRIVATE);
+        Log.d(TAG, "getCurrentScore: "+scorePref.getInt(CURRENT_SCORE, 0));
         return scorePref.getInt(CURRENT_SCORE, 0);
     }
 

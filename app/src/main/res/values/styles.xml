@@ -14,7 +14,7 @@
 
         // Use windowSplashScreenAnimatedIcon to add either a drawable or an
         // animated drawable. One of these is required.
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_app_small</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_app_no_bg</item>
         <item name="windowSplashScreenAnimationDuration">500</item>
         # Required for
         # animated icons

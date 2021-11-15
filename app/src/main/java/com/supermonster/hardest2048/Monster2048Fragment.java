@@ -1,4 +1,4 @@
-package com.slowcaculator.slow2048;
+package com.supermonster.hardest2048;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -26,14 +26,13 @@ import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import es.dmoral.toasty.Toasty;
 import me.grantland.widget.AutofitTextView;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Slow2048Fragment extends Fragment implements View.OnClickListener {
+public class Monster2048Fragment extends Fragment implements View.OnClickListener {
 
     @BindView(R.id.gvGame)
     GridView gvGame;
@@ -54,7 +53,7 @@ public class Slow2048Fragment extends Fragment implements View.OnClickListener {
     private boolean isResume = false;
     private static final String TAG = "MonsterFragment";
 
-    public Slow2048Fragment(PlayViewListener playViewListener) {
+    public Monster2048Fragment(PlayViewListener playViewListener) {
         // Required empty public constructor
         this.playViewListener = playViewListener;
     }
@@ -102,7 +101,7 @@ public class Slow2048Fragment extends Fragment implements View.OnClickListener {
     public void initData() {
         if (isResume()) {
             updateTextView(tvScore, Global.getCurrentScore(getContext()));
-            DoNotRemove.getInstance().initSaved(getContext(), getSavedData());
+            DoNotRemove.getInstance().initSaved(getContext(), getSavedData(),Global.getCurrentScore(getContext()));
         } else {
             updateTextView(tvScore, 0);
             DoNotRemove.getInstance().init(getContext());
@@ -222,6 +221,7 @@ public class Slow2048Fragment extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
+                Global.saveResumeState(getContext(),false);
                 playViewListener.stopGame();
             }
         });

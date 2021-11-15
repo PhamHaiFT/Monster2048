@@ -1,4 +1,4 @@
-package com.slowcaculator.slow2048;
+package com.supermonster.hardest2048;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -51,7 +51,7 @@ public class DoNotRemove {
         updateListNumber();
     }
 
-    public void initSaved(Context context,ArrayList<Integer> dataSave) {
+    public void initSaved(Context context,ArrayList<Integer> dataSave,int savedScore) {
 
         int loopCount = 0;
         for (int i = 0; i < 4; i++) {
@@ -73,6 +73,7 @@ public class DoNotRemove {
         addNumber();
 //        updateListNumber();
         listNumber.addAll(dataSave);
+        score = savedScore;
     }
 
     private static int countNewNumber;

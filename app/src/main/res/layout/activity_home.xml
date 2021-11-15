@@ -6,13 +6,13 @@
     android:elevation="@dimen/_10sdp"
     android:layout_height="match_parent"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-    tools:context="com.slowcaculator.slow2048.HomeActivity">
+    tools:context="com.supermonster.hardest2048.HomeActivity">
 
     <ImageView
         android:id="@+id/imgIcon"
         android:layout_width="@dimen/_130sdp"
         android:layout_height="@dimen/_130sdp"
-        android:src="@drawable/ic_app_small"
+        android:src="@drawable/ic_app_no_bg"
         app:layout_constraintBottom_toTopOf="@id/v1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

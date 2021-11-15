@@ -1,4 +1,4 @@
-package com.slowcaculator.slow2048;
+package com.supermonster.hardest2048;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -61,9 +61,9 @@ public class HomeActivity extends AppCompatActivity implements PlayViewListener,
     }
 
     private void gotoPlayFragment(boolean isResume) {
-        Slow2048Fragment slow2048Fragment = new Slow2048Fragment(this);
-        slow2048Fragment.setResume(isResume);
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, slow2048Fragment).addToBackStack(Global.backStackName).commit();
+        Monster2048Fragment monster2048Fragment = new Monster2048Fragment(this);
+        monster2048Fragment.setResume(isResume);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, monster2048Fragment).addToBackStack(Global.backStackName).commit();
     }
 
 
@@ -125,9 +125,10 @@ public class HomeActivity extends AppCompatActivity implements PlayViewListener,
 
     @Override
     public void stopGame() {
-        Global.saveResumeState(getApplicationContext(),false);
-        Global.saveCurrentScore(getApplicationContext(),0);
-        Global.saveCurrentData(getApplicationContext(),"");
+        if (!Global.getResumeState(getApplicationContext())){
+            Global.saveCurrentScore(getApplicationContext(),0);
+            Global.saveCurrentData(getApplicationContext(),"");
+        }
         getSupportFragmentManager().popBackStack();
     }
 

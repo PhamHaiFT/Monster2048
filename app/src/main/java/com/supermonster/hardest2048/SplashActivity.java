@@ -1,4 +1,4 @@
-package com.slowcaculator.slow2048;
+package com.supermonster.hardest2048;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApp">
         <activity
-            android:name="com.slowcaculator.slow2048.SplashActivity"
+            android:name="com.supermonster.hardest2048.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MySplashNew">
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.slowcaculator.slow2048.HomeActivity"
+            android:name="com.supermonster.hardest2048.HomeActivity"
             android:screenOrientation="portrait" />
     </application>
 

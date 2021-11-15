@@ -24,7 +24,7 @@ public class Global {
 
     public static int getBestScore(Context context) {
         scorePref = context.getSharedPreferences(SLOW_PREF, Context.MODE_PRIVATE);
-        return scorePref.getInt(BEST_SCORE, 0);
+        return scorePref.getInt(BEST_SCORE, 2048);
     }
 
     //lưu state của resume

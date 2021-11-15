@@ -93,7 +93,7 @@ public class HomeActivity extends AppCompatActivity implements PlayViewListener,
     public void showMainView() {
         imgIcon.setVisibility(View.VISIBLE);
         btnStart.setVisibility(View.VISIBLE);
-        btnCafe.setVisibility(View.VISIBLE);
+        btnCafe.setVisibility(View.GONE);
 
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim_slide_in_right);
         btnStart.startAnimation(animation);

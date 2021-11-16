@@ -1,1 +1,1 @@
-# Slow2048
+# Monster2048
